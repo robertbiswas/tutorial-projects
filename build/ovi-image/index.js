@@ -225,7 +225,7 @@ module.exports = window["wp"]["components"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"lwhh/ovi-image","version":"0.1.0","title":"Ovi Image","category":"widgets","description":"Image block based on Ovi Plabon","example":{},"attributes":{"id":{"type":"integer","default":null},"imgSrc":{"type":"string","default":"https://fakeimg.pl/600x400"},"alt":{"type":"string"}},"supports":{"html":false,"align":true,"alignWide":false},"textdomain":"tutorial-projects","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"lwhh/ovi-image","version":"0.1.0","title":"Ovi Image","category":"widgets","description":"Image block based on Ovi Plabon","example":{},"attributes":{"id":{"type":"integer","default":null},"imgSrc":{"type":"string","default":"https://fakeimg.pl/600x400","source":"attribute","attribute":"src","selector":"img"},"alt":{"type":"string","source":"attribute","attribute":"alt","selector":"img"}},"supports":{"html":false,"align":true,"alignWide":false},"textdomain":"tutorial-projects","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

@@ -14,10 +14,16 @@
 		},
 		"imgSrc": {
 			"type": "string",
-			"default": "https://fakeimg.pl/600x400"
+			"default": "https://fakeimg.pl/600x400",
+			"source": "attribute",
+			"attribute": "src",
+			"selector": "img"
 		},
 		"alt": {
-			"type": "string"
+			"type": "string",
+			"source": "attribute",
+			"attribute": "alt",
+			"selector": "img"
 		}
 	},
 	"supports": {
