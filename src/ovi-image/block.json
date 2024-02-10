@@ -12,8 +12,9 @@
 			"type": "integer",
 			"default": null
 		},
-		"src": {
-			"type": "string"
+		"imgSrc": {
+			"type": "string",
+			"default": "https://fakeimg.pl/600x400"
 		},
 		"alt": {
 			"type": "string"
@@ -27,6 +28,5 @@
 	"textdomain": "tutorial-projects",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
-	"render": "file:./render.php"
+	"style": "file:./style-index.css"
 }

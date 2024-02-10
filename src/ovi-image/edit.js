@@ -5,7 +5,7 @@ import './editor.scss';
 
 
 export default function Edit({ attributes, setAttributes } ) {
-	const {id, src, alt } = attributes;
+	const {id, imgSrc, alt } = attributes;
 	const ImageIcon = () => (
 		<Icon icon="format-image" />
 	);
@@ -17,7 +17,7 @@ export default function Edit({ attributes, setAttributes } ) {
 	);
 	return (
 		<figure { ...useBlockProps() }>
-			{src && <img src={src} alt={alt} />} 
+			
 			<MediaUploadCheck>
 			<MediaUpload
 				onSelect={ ( image ) =>{
@@ -25,13 +25,11 @@ export default function Edit({ attributes, setAttributes } ) {
 						{ 
 							id: image.id,
 							alt: image.title,
-							// src: image.url
-							src: ( image.sizes.thumbnail && image.sizes.thumbnail.url ) ||  image.url
+							imgSrc: (image.sizes.thumbnail && image.sizes.url ) || image.url
 
 						}
 					);
-				}
-				}
+				}}
 				multiple= {false}
 				allowedTypes={ 'image/*' }
 				value={ id }
@@ -39,17 +37,19 @@ export default function Edit({ attributes, setAttributes } ) {
 					<>
 						<Button variant="secondary"
 							onClick={(open)}
-							icon={ (id || src ) ?  ImageRefresh : ImageIcon }
+							icon={ (id || imgSrc ) ?  ImageRefresh : ImageIcon }
+						></Button>
+						<Button variant="secondary"
+							onClick={()=>setAttributes({ id: null, src: null})}
+							icon={ImageRemove}
 						></Button>
 					</>
 					)
 				 }
 			/>
-				<Button variant="secondary"
-					onClick={()=>setAttributes({ id: null, src: null})}
-					icon={ImageRemove}
-				></Button>
+				
 		</MediaUploadCheck>
+		<img src={imgSrc} alt={alt} />
 		</figure>
 		
 	);

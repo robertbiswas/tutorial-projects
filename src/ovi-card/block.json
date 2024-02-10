@@ -6,12 +6,44 @@
 	"title": "Ovi Card",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Card Block showing image and content",
+	"attributes": {
+		"imageId": {
+			"type": "integer",
+			"default": null
+		},
+		"imageSrc": {
+			"type": "string"
+		},
+		"imageAlt": {
+			"type": "string"
+		},
+		"label": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		},
+		"content": {
+			"type": "string"
+		},
+		"btnText": {
+			"type": "string"
+		},
+		"labelPosition": {
+			"type": "string",
+			"default": "top-right"
+		},
+		"imagePosition": {
+			"type": "string",
+			"default": "top"
+		}
+	},
 	"example": {},
 	"supports": {
 		"html": false
 	},
-	"textdomain": "ovi-card",
+	"textdomain": "tutorial-projects",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
