@@ -1,40 +1,38 @@
 ![LWHH - Gutenberg](/assets/lwhh-gutenberg-screen.jpg)
 
-=== Tutorial Projects ===
+# Tutorial Projects
 
 Gutenberg Block Development Tutorial projects based on Ovi Plabon's tutorial hosted on Learn With Hasin Hayder.
 
-== Description ==
+### Project 1
 
-## Project 1
-
-### Image block
+#### Image block
 
 One image bolck which can upload, select from media and show in back end and front end. It has alignment functionality.
 
-- Learning context
+**Learning context**
 
-* Basic block creation
-* JSON attributes
-* MediaUpload, MediaUploadCheck controls
-* Use of Components: Button, Icon
-* Saving block content
+- Basic block creation
+- JSON attributes
+- MediaUpload, MediaUploadCheck controls
+- Use of Components: Button, Icon
+- Saving block content
 
-## Project 2
+### Project 2
 
-### Card block
+#### Card block
 
 A card block consists of image, title, description and a button. It has several layout such as image on top, left, right. On the image it has a label tag can be used for price, category etc.
 
-- Learning context
+**Learning context**
 
-* Basic block creation
-* JSON attributes
-* Use of InspectorControls, MediaUpload, MediaUploadCheck, RichText
-* Use of Components: Button, Icon, PanelBody, SelectControl
-* Saving block content
+- Basic block creation
+- JSON attributes
+- Use of InspectorControls, MediaUpload, MediaUploadCheck, RichText
+- Use of Components: Button, Icon, PanelBody, SelectControl
+- Saving block content
 
-== Installation ==
+## Installation
 
 This section describes how to install the plugin and get it working.
 
@@ -43,7 +41,7 @@ e.g.
 1. Upload the plugin files to the `/wp-content/plugins/tutorial-projects` directory, or install the plugin through the WordPress plugins screen directly.
 1. Activate the plugin through the 'Plugins' screen in WordPress
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions
 
 = Where do I get this tutorial =
 
@@ -59,4 +57,6 @@ I was refresing myself with the current Gutenberg updates. I found those out dat
 
 = 0.1.0 [7th Feb 2024]=
 
+- Release
+  = 0.1.1 [11th Feb 2024]=
 - Release
