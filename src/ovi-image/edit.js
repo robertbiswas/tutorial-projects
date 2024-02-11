@@ -34,7 +34,7 @@ export default function Edit({ attributes, setAttributes } ) {
 				allowedTypes={ 'image/*' }
 				value={ id }
 				render={ ( { open } ) => (
-					<>
+					<div className='img-wrapper'>
 						<Button variant="secondary"
 							onClick={(open)}
 							icon={ (id || imgSrc ) ?  ImageRefresh : ImageIcon }
@@ -43,7 +43,7 @@ export default function Edit({ attributes, setAttributes } ) {
 							onClick={()=>setAttributes({ id: null, src: null})}
 							icon={ImageRemove}
 						></Button>
-					</>
+					</div>
 					)
 				 }
 			/>

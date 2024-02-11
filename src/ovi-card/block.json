@@ -8,27 +8,40 @@
 	"icon": "smiley",
 	"description": "Card Block showing image and content",
 	"attributes": {
-		"imageId": {
+		"id": {
 			"type": "integer",
 			"default": null
 		},
-		"imageSrc": {
-			"type": "string"
+		"imgSrc": {
+			"type": "string",
+			"default": "https://fakeimg.pl/600x400",
+			"source": "attribute",
+			"attribute": "src",
+			"selector": "img"
 		},
-		"imageAlt": {
-			"type": "string"
+		"alt": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "alt",
+			"selector": "img"
 		},
 		"label": {
 			"type": "string"
 		},
 		"title": {
-			"type": "string"
+			"type": "string",
+			"source": "html",
+			"selector": "h2"
 		},
 		"content": {
-			"type": "string"
+			"type": "string",
+			"source": "text",
+			"selector": ".lwhh-card-text p"
 		},
 		"btnText": {
-			"type": "string"
+			"type": "string",
+			"source": "text",
+			"selector": "a"
 		},
 		"labelPosition": {
 			"type": "string",

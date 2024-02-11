@@ -164,4 +164,10 @@
   background-color: #242424;
 }
 
+.lwhh-card .ctrl-btn-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+
 /*# sourceMappingURL=style-index.css.map*/

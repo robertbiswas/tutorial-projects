@@ -6,6 +6,34 @@ Gutenberg Block Development Tutorial projects based on Ovi Plabon's tutorial hos
 
 == Description ==
 
+## Project 1
+
+### Image block
+
+One image bolck which can upload, select from media and show in back end and front end. It has alignment functionality.
+
+- Learning context
+
+* Basic block creation
+* JSON attributes
+* MediaUpload, MediaUploadCheck controls
+* Use of Components: Button, Icon
+* Saving block content
+
+## Project 2
+
+### Card block
+
+A card block consists of image, title, description and a button. It has several layout such as image on top, left, right. On the image it has a label tag can be used for price, category etc.
+
+- Learning context
+
+* Basic block creation
+* JSON attributes
+* Use of InspectorControls, MediaUpload, MediaUploadCheck, RichText
+* Use of Components: Button, Icon, PanelBody, SelectControl
+* Saving block content
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.

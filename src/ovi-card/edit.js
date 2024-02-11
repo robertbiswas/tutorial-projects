@@ -1,5 +1,7 @@
-import { InspectorControls, RichText, useBlockProps } from '@wordpress/block-editor';
+import { InspectorControls, MediaUpload, MediaUploadCheck, RichText, useBlockProps } from '@wordpress/block-editor';
 import {
+	Button,
+	Icon,
 	PanelBody,
 	SelectControl
 } from '@wordpress/components';
@@ -7,7 +9,17 @@ import { __ } from '@wordpress/i18n';
 import './editor.scss';
 
 export default function Edit({attributes, setAttributes}) {
+	const {id, imgSrc, alt} = attributes;
 	const blockProps = useBlockProps();
+	const ImageIcon = () => (
+		<Icon icon="format-image" />
+	);
+	const ImageRefresh = () => (
+		<Icon icon="redo" />
+	);
+	const ImageRemove = () => (
+		<Icon icon="remove" />
+	);
 	return (
 		<>
 		<InspectorControls>
@@ -46,7 +58,39 @@ export default function Edit({attributes, setAttributes}) {
 		</InspectorControls>
 		<div className={ `lwhh-card lwhh-card--figure-${attributes.imagePosition} `}>
 			<div className="lwhh-card-figure">
-				<img src="https://via.placeholder.com/400x200?text=LWHH course" alt="" />
+
+				<MediaUploadCheck>
+					<MediaUpload
+						onSelect={ ( image ) =>{
+							setAttributes(
+								{ 
+									id: image.id,
+									alt: image.title,
+									imgSrc: (image.sizes.thumbnail && image.sizes.url ) || image.url
+
+								}
+							);
+						}}
+						multiple= {false}
+						allowedTypes={ 'image/*' }
+						value={ id }
+						render={ ( { open } ) => (
+							<div className='ctrl-btn-wrapper'>
+								<Button variant="secondary"
+									onClick={(open)}
+									icon={ (id || imgSrc ) ?  ImageRefresh : ImageIcon }
+								></Button>
+								<Button variant="secondary"
+									onClick={()=>{setAttributes({ id: null, imgSrc: null}); console.log('pitu')}}
+									icon={ImageRemove}
+								></Button>
+							</div>
+							)
+						}
+					/>
+						
+				</MediaUploadCheck>
+				<img src={imgSrc} alt={alt} />
 				<RichText
 					tagName= "div"
 					className={`lwhh-label lwhh-label--${attributes.labelPosition}`}
