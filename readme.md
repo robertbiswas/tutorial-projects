@@ -69,9 +69,8 @@ As on 7th February 2024, the tutorial is not available any more. These project's
 
 I was refresing myself with the current Gutenberg updates. I found those out dated so just rewrite them in new way. Hopeing someone who had that tutorial could be beneficial.
 
-== Screenshots ==
+#### Changelog
 
-== Changelog ==
 = 1.0 [12nd Feb 2024]
 
 - Tutorial successfully finish
