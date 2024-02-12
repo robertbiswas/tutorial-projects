@@ -8,7 +8,7 @@ Gutenberg Block Development Tutorial projects based on Ovi Plabon's tutorial hos
 
 #### Image block
 
-![LWHH - image-block](/assets/image-block.png)
+![LWHH - image-block](/assets/image-block2.png)
 One image bolck which can upload, select from media and show in back end and front end. It has alignment functionality.
 
 **Learning context**
