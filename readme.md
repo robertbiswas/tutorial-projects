@@ -2,7 +2,7 @@
 
 # Tutorial Projects
 
-Gutenberg Block Development Tutorial projects based on Ovi Plabon's tutorial hosted on Learn With Hasin Hayder.
+Gutenberg Block Development Tutorial projects based on Obi Plabon's tutorial hosted on Learn With Hasin Hayder.
 
 ### Project 1
 

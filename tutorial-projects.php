@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Tutorial Projects
- * Description:       These blocks has made based on Ovi Plabon's Tutorial.
+ * Description:       These blocks has made based on Obi Plabon's Tutorial.
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0

@@ -3,9 +3,9 @@
 	"apiVersion": 3,
 	"name": "lwhh/ovi-image",
 	"version": "0.1.0",
-	"title": "Ovi Image",
+	"title": "Obi Image",
 	"category": "widgets",
-	"description": "Image block based on Ovi Plabon",
+	"description": "Image block based on Obi Plabon",
 	"example": {},
 	"attributes": {
 		"id": {

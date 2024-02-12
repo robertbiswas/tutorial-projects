@@ -3,7 +3,7 @@
   "apiVersion": 3,
   "name": "lwhh/ovi-card-innerblock",
   "version": "0.1.0",
-  "title": "Ovi Card Inner blocks",
+  "title": "Obi Card Inner blocks",
   "category": "widgets",
   "icon": "smiley",
   "description": "Card Block showing image and Inner blocks",

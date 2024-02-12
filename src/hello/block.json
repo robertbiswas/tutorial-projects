@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "lwhh/default",
 	"version": "0.1.0",
-	"title": "Ovi Default Block",
+	"title": "Obi Default Block",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",

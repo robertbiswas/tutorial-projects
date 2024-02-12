@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "lwhh/ovi-card",
 	"version": "0.1.0",
-	"title": "Ovi Card",
+	"title": "Obi Card",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Card Block showing image and content",
