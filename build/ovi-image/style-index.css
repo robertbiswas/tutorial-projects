@@ -13,13 +13,19 @@
   min-height: 100px;
 }
 .wp-block-lwhh-ovi-image img {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
 
 .wp-block-lwhh-ovi-image.aligncenter img {
   margin-left: auto;
   margin-right: auto;
+}
+
+.ctrl-btn-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

@@ -8,6 +8,7 @@ Gutenberg Block Development Tutorial projects based on Ovi Plabon's tutorial hos
 
 #### Image block
 
+![LWHH - image-block](/assets/image-block.png)
 One image bolck which can upload, select from media and show in back end and front end. It has alignment functionality.
 
 **Learning context**
@@ -22,6 +23,8 @@ One image bolck which can upload, select from media and show in back end and fro
 
 #### Card block
 
+![LWHH - card-block](/assets/card-block.png)
+
 A card block consists of image, title, description and a button. It has several layout such as image on top, left, right. On the image it has a label tag can be used for price, category etc.
 
 **Learning context**
@@ -30,6 +33,21 @@ A card block consists of image, title, description and a button. It has several 
 - JSON attributes
 - Use of InspectorControls, MediaUpload, MediaUploadCheck, RichText
 - Use of Components: Button, Icon, PanelBody, SelectControl
+- Saving block content
+
+### Project 3
+
+#### Card block using InnerBlocks
+
+A card block consists of image and an InnerBlock templates. It has several layout such as image on top, left, right. On the image it has a label tag can be used for price, category etc.
+
+**Learning context**
+
+- Use of useBlockProps, custome classes, inline CSS
+- JSON attributes
+- Use of InspectorControls, MediaUpload, MediaUploadCheck, RichText
+- Use of Components: Button, Icon, PanelBody, SelectControl, RangeControl
+- InnerBlocks use, InnerBlocks Templates
 - Saving block content
 
 ## Installation
@@ -54,9 +72,14 @@ I was refresing myself with the current Gutenberg updates. I found those out dat
 == Screenshots ==
 
 == Changelog ==
+= 1.0 [12nd Feb 2024]
+
+- Tutorial successfully finish
+
+= 0.1.1 [11th Feb 2024]=
+
+- Start Card block
 
 = 0.1.0 [7th Feb 2024]=
 
-- Release
-  = 0.1.1 [11th Feb 2024]=
 - Release

@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/ovi-card/edit.js":
-/*!******************************!*\
-  !*** ./src/ovi-card/edit.js ***!
-  \******************************/
+/***/ "./src/ovi-card-innerblocks/edit.js":
+/*!******************************************!*\
+  !*** ./src/ovi-card-innerblocks/edit.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/ovi-card/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/ovi-card-innerblocks/editor.scss");
 
 
 
@@ -33,9 +33,24 @@ function Edit({
   const {
     id,
     imgSrc,
-    alt
+    alt,
+    cardRadius,
+    labelRadius
   } = attributes;
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
+  const ALLOWED_BLOCKS = ['core/paragraph', 'core/heading', 'core/button'];
+  const CARD_TEMPLATE = [['core/heading', {
+    placeholder: 'Card Title'
+  }], ['core/paragraph', {
+    placeholder: 'Summary'
+  }], ['core/button', {
+    placeholder: 'Button Text'
+  }]];
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
+    className: `lwhh-card-two lwhh-card-two--figure-${attributes.imagePosition}`,
+    style: {
+      borderRadius: cardRadius + 'px'
+    }
+  });
   const ImageIcon = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Icon, {
     icon: "format-image"
   });
@@ -99,16 +114,36 @@ function Edit({
     onChange: labelPosition => setAttributes({
       labelPosition
     })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Card')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Border Radius"),
+    value: cardRadius,
+    onChange: value => setAttributes({
+      cardRadius: value
+    }),
+    min: 0,
+    max: 50
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Label')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Label Radius"),
+    value: labelRadius,
+    onChange: value => setAttributes({
+      labelRadius: value
+    }),
+    min: 0,
+    max: 50
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `lwhh-card lwhh-card--figure-${attributes.imagePosition} `
+    ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "lwhh-card-figure"
+    className: "lwhh-card-two-figure"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
     onSelect: image => {
       setAttributes({
         id: image.id,
         alt: image.title,
-        imgSrc: image.sizes.thumbnail && image.sizes.url || image.url
+        imgSrc: image.url
       });
     },
     multiple: false,
@@ -136,63 +171,41 @@ function Edit({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: imgSrc,
     alt: alt
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-    tagName: "div",
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `lwhh-label lwhh-label--${attributes.labelPosition}`,
+    style: {
+      borderRadius: labelRadius + 'px'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     value: attributes.label,
     onChange: label => setAttributes({
       label
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('$ price'),
     keepPlaceholderOnFocus: true
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "lwhh-card-body"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-    tagName: "h2",
-    className: "lwhh-card-title",
-    value: attributes.title,
-    onChange: title => setAttributes({
-      title
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Heading...'),
-    keepPlaceholderOnFocus: true
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "lwhh-card-text"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-    tagName: "p",
-    value: attributes.content,
-    onChange: content => setAttributes({
-      content
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Type your Card Content ...'),
-    keepPlaceholderOnFocus: true
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
-    tagName: "a",
-    className: "lwhh-card-btn",
-    value: attributes.btnText,
-    onChange: btnText => setAttributes({
-      btnText
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Button Text'),
-    keepPlaceholderOnFocus: true
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "lwhh-card-two-body"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
+    allowedBlocks: ALLOWED_BLOCKS,
+    template: CARD_TEMPLATE
   }))));
 }
 
 /***/ }),
 
-/***/ "./src/ovi-card/index.js":
-/*!*******************************!*\
-  !*** ./src/ovi-card/index.js ***!
-  \*******************************/
+/***/ "./src/ovi-card-innerblocks/index.js":
+/*!*******************************************!*\
+  !*** ./src/ovi-card-innerblocks/index.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block.json */ "./src/ovi-card/block.json");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/ovi-card/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/ovi-card/save.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/ovi-card/style.scss");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block.json */ "./src/ovi-card-innerblocks/block.json");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/ovi-card-innerblocks/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/ovi-card-innerblocks/save.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/ovi-card-innerblocks/style.scss");
 
 
 
@@ -211,10 +224,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/ovi-card/save.js":
-/*!******************************!*\
-  !*** ./src/ovi-card/save.js ***!
-  \******************************/
+/***/ "./src/ovi-card-innerblocks/save.js":
+/*!******************************************!*\
+  !*** ./src/ovi-card-innerblocks/save.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -223,44 +236,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+
 
 function save({
   attributes
 }) {
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
+    className: `lwhh-card-two lwhh-card-two--figure-${attributes.imagePosition}`,
+    style: {
+      borderRadius: attributes.cardRadius + 'px'
+    }
+  });
   const {
     imgSrc,
     alt,
-    label,
-    title,
-    content,
-    btnText
+    label
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `lwhh-card lwhh-card--figure-${attributes.imagePosition} `
+    ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "lwhh-card-figure"
+    className: "lwhh-card-two-figure"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: imgSrc,
     alt: alt
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `lwhh-label lwhh-label--${attributes.labelPosition}`
   }, label)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "lwhh-card-body"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "lwhh-card-title"
-  }, title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "lwhh-card-text"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, content)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    className: "lwhh-card-btn"
-  }, btnText)));
+    className: "lwhh-card-two-body"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null)));
 }
 
 /***/ }),
 
-/***/ "./src/ovi-card/editor.scss":
-/*!**********************************!*\
-  !*** ./src/ovi-card/editor.scss ***!
-  \**********************************/
+/***/ "./src/ovi-card-innerblocks/editor.scss":
+/*!**********************************************!*\
+  !*** ./src/ovi-card-innerblocks/editor.scss ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -269,10 +282,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/ovi-card/style.scss":
-/*!*********************************!*\
-  !*** ./src/ovi-card/style.scss ***!
-  \*********************************/
+/***/ "./src/ovi-card-innerblocks/style.scss":
+/*!*********************************************!*\
+  !*** ./src/ovi-card-innerblocks/style.scss ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -331,13 +344,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/ovi-card/block.json":
-/*!*********************************!*\
-  !*** ./src/ovi-card/block.json ***!
-  \*********************************/
+/***/ "./src/ovi-card-innerblocks/block.json":
+/*!*********************************************!*\
+  !*** ./src/ovi-card-innerblocks/block.json ***!
+  \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"lwhh/ovi-card","version":"0.1.0","title":"Ovi Card","category":"widgets","icon":"smiley","description":"Card Block showing image and content","attributes":{"id":{"type":"integer","default":null},"imgSrc":{"type":"string","default":"https://fakeimg.pl/600x400","source":"attribute","attribute":"src","selector":"img"},"alt":{"type":"string","source":"attribute","attribute":"alt","selector":"img"},"label":{"type":"string"},"title":{"type":"string","source":"html","selector":"h2"},"content":{"type":"string","source":"text","selector":".lwhh-card-text p"},"btnText":{"type":"string","source":"text","selector":"a"},"labelPosition":{"type":"string","default":"top-right"},"imagePosition":{"type":"string","default":"top"}},"example":{},"supports":{"html":false},"textdomain":"tutorial-projects","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"lwhh/ovi-card-innerblock","version":"0.1.0","title":"Ovi Card Inner blocks","category":"widgets","icon":"smiley","description":"Card Block showing image and Inner blocks","attributes":{"id":{"type":"integer","default":null},"imgSrc":{"type":"string","default":"https://fakeimg.pl/600x400","source":"attribute","attribute":"src","selector":"img"},"alt":{"type":"string","source":"attribute","attribute":"alt","selector":"img"},"label":{"type":"string"},"labelPosition":{"type":"string","default":"top-right"},"imagePosition":{"type":"string","default":"top"},"cardRadius":{"type":"integer","default":15},"labelRadius":{"type":"integer","default":15}},"example":{},"supports":{"html":false},"textdomain":"tutorial-projects","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
@@ -451,8 +464,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"ovi-card/index": 0,
-/******/ 			"ovi-card/style-index": 0
+/******/ 			"ovi-card-innerblocks/index": 0,
+/******/ 			"ovi-card-innerblocks/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -502,7 +515,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["ovi-card/style-index"], () => (__webpack_require__("./src/ovi-card/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["ovi-card-innerblocks/style-index"], () => (__webpack_require__("./src/ovi-card-innerblocks/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

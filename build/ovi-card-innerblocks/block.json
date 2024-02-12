@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "lwhh/ovi-card-innerblock",
+  "version": "0.1.0",
+  "title": "Ovi Card Inner blocks",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Card Block showing image and Inner blocks",
+  "attributes": {
+    "id": {
+      "type": "integer",
+      "default": null
+    },
+    "imgSrc": {
+      "type": "string",
+      "default": "https://fakeimg.pl/600x400",
+      "source": "attribute",
+      "attribute": "src",
+      "selector": "img"
+    },
+    "alt": {
+      "type": "string",
+      "source": "attribute",
+      "attribute": "alt",
+      "selector": "img"
+    },
+    "label": {
+      "type": "string"
+    },
+    "labelPosition": {
+      "type": "string",
+      "default": "top-right"
+    },
+    "imagePosition": {
+      "type": "string",
+      "default": "top"
+    },
+    "cardRadius": {
+      "type": "integer",
+      "default": 15
+    },
+    "labelRadius": {
+      "type": "integer",
+      "default": 15
+    }
+  },
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "tutorial-projects",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

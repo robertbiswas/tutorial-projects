@@ -8,14 +8,14 @@ export default function save({attributes}) {
 				<div className={`lwhh-label lwhh-label--${attributes.labelPosition}`}>
 					{label}
 				</div>
-				<div className="lwhh-card-body">
+			</div>
+			<div className="lwhh-card-body">
 					<h2 className='lwhh-card-title'>{title}</h2>
 					<div className="lwhh-card-text">
 						<p>{content}</p>
 					</div>
 					<a className='lwhh-card-btn' >{btnText}</a>
 				</div>
-			</div>
 		</div>
 	);
 }

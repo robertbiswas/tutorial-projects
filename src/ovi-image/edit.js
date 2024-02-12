@@ -15,9 +15,12 @@ export default function Edit({ attributes, setAttributes } ) {
 	const ImageRemove = () => (
 		<Icon icon="remove" />
 	);
+	const blockProps = useBlockProps({
+		className: "lwhh-figure"
+	});
 	return (
-		<figure { ...useBlockProps() }>
-			
+		<figure { ...blockProps }>
+			<div className='img-wrapper'>
 			<MediaUploadCheck>
 			<MediaUpload
 				onSelect={ ( image ) =>{
@@ -34,7 +37,8 @@ export default function Edit({ attributes, setAttributes } ) {
 				allowedTypes={ 'image/*' }
 				value={ id }
 				render={ ( { open } ) => (
-					<div className='img-wrapper'>
+					
+						<div className='ctrl-btn-wrapper'>
 						<Button variant="secondary"
 							onClick={(open)}
 							icon={ (id || imgSrc ) ?  ImageRefresh : ImageIcon }
@@ -43,13 +47,15 @@ export default function Edit({ attributes, setAttributes } ) {
 							onClick={()=>setAttributes({ id: null, src: null})}
 							icon={ImageRemove}
 						></Button>
-					</div>
+						</div>
+					
 					)
 				 }
 			/>
 				
 		</MediaUploadCheck>
-		<img src={imgSrc} alt={alt} />
+		<img className='lwhh-figure__image' src={imgSrc} alt={alt} />
+		</div>
 		</figure>
 		
 	);

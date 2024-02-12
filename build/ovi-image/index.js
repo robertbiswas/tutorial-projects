@@ -41,8 +41,13 @@ function Edit({
   const ImageRemove = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Icon, {
     icon: "remove"
   });
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
+    className: "lwhh-figure"
+  });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)()
+    ...blockProps
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "img-wrapper"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
     onSelect: image => {
       setAttributes({
@@ -57,7 +62,7 @@ function Edit({
     render: ({
       open
     }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "img-wrapper"
+      className: "ctrl-btn-wrapper"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
       variant: "secondary",
       onClick: open,
@@ -71,9 +76,10 @@ function Edit({
       icon: ImageRemove
     }))
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    className: "lwhh-figure__image",
     src: imgSrc,
     alt: alt
-  }));
+  })));
 }
 
 /***/ }),

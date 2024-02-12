@@ -28,6 +28,7 @@ function lwhh_tutorial_projects_block_init() {
 	register_block_type( __DIR__ . '/build/hello/' );
 	register_block_type( __DIR__ . '/build/ovi-image/' );
 	register_block_type( __DIR__ . '/build/ovi-card/' );
+	register_block_type( __DIR__ . '/build/ovi-card-innerblocks/' );
 }
 add_action( 'init', 'lwhh_tutorial_projects_block_init' );
 
